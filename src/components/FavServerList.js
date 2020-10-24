@@ -7,6 +7,7 @@ class FavServerList extends Component {
     queriedServer: [],
     activeLink: null,
     currentFavServerList: [],
+    serverExists: true,
   }
   
   componentDidUpdate(prevProps) {
@@ -64,6 +65,10 @@ class FavServerList extends Component {
 
 
   queryServer = (ip, port) => { 
+    this.setState({
+      queriedServer: [],
+      serverExists: true,
+    });
     const apiUrl = "https://tranquil-sands-27723.herokuapp.com/"
     fetch(`${apiUrl}?ip=${encodeURIComponent(ip)}&port=${encodeURIComponent(port)}`)
       .then(res => res.json())
@@ -82,6 +87,9 @@ class FavServerList extends Component {
       })
       .catch((error) => {
         console.log('Server not found')
+        this.setState({
+          serverExists: false,
+        })
       });    
   }
 
@@ -113,7 +121,8 @@ class FavServerList extends Component {
           </ul>
         </div>
         <SelectedServerInfo
-          serverInfo={this.state.queriedServer} />
+          serverInfo={this.state.queriedServer}
+          serverExists={this.state.serverExists} />
       </>
     )
   }

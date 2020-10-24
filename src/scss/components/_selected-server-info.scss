@@ -32,5 +32,13 @@ section#server {
     tbody td {
       padding: 3px 0;
     }
+    th.no-players {
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      @include themed() {
+        color: t($text-secondary);
+      }
+      transition: color $timing-xs $ease-in;
+    }
   }
 }

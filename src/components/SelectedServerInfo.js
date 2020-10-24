@@ -28,7 +28,12 @@ class SelectedServerInfo extends Component {
       </div>
         <section id="server">
           <span id="server__details">
-            <ul>            
+            <ul>
+              {this.props.serverExists == false && 
+                <li>
+                  <strong>Server not found.</strong>
+                </li>
+              }
               {this.state.serverInfo.name && 
                 <li>
                   <strong>Name:</strong> {this.state.serverInfo.name}
@@ -70,7 +75,7 @@ class SelectedServerInfo extends Component {
             
             {this.state.serverPlayers && this.state.serverPlayers <= 0 &&
               <tr>
-                <th colSpan="3" align="left" valign="top">No players found on the server</th>
+                <th colSpan="3" align="left" valign="top" class="no-players">No players found on the server</th>
               </tr>
             }      
 

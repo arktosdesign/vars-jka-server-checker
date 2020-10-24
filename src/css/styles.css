@@ -833,4 +833,18 @@ section#server table tbody td {
   padding: 3px 0;
 }
 
+section#server table th.no-players {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: color 48ms cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.theme--default section#server table th.no-players {
+  color: #6A6A6A;
+}
+
+.theme--dark section#server table th.no-players {
+  color: #D1D1D1;
+}
+
 /*# sourceMappingURL=styles.css.map */
