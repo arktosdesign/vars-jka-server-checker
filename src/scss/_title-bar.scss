@@ -17,9 +17,9 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -3px;
     height: $border-width / 2;
-    width: 100%;
+    width: calc(100% + 6px);
     @include themed() {
       background: t($border);
     }
@@ -36,7 +36,7 @@
   font-weight: bold;
   letter-spacing: 0;
   margin-right: 24px;
-  padding: 4px 2px 3px 3px;
+  padding: 3px 2px 3px 4px;
 }
 .title-bar-controls {
   display: flex;

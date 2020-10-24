@@ -9,7 +9,7 @@
   @include themed() {
     background: t($card-bg);
     color: t($text);
-    border-width: 0 $border-width 0 0;
+    border-width: 0 $border-width / 2 0 0;
     border-style: solid;
     border-color: t($border);    
   }
@@ -30,9 +30,9 @@
     height: 3px;
     top: auto;
     bottom: -3px;
-    right: -$border-width;
+    right: -$border-width / 2;
     @include themed() {
-      border-width: 0 $border-width 0 0;
+      border-width: 0 $border-width / 2 0 0;
       border-style: solid;
       border-color: t($border);    
     }

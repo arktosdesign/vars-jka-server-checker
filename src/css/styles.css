@@ -166,9 +166,9 @@ button.btn-toggle-server {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: -3px;
   height: 1px;
-  width: 100%;
+  width: calc(100% + 6px);
   transition: background 48ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
@@ -192,7 +192,7 @@ button.btn-toggle-server {
   font-weight: bold;
   letter-spacing: 0;
   margin-right: 24px;
-  padding: 4px 2px 3px 3px;
+  padding: 3px 2px 3px 4px;
 }
 
 .title-bar-controls {
@@ -318,7 +318,7 @@ button.btn-toggle-server {
 .theme--default .server-form {
   background: #efeff3;
   color: #111111;
-  border-width: 0 2px 0 0;
+  border-width: 0 1px 0 0;
   border-style: solid;
   border-color: #dee3e6;
 }
@@ -326,7 +326,7 @@ button.btn-toggle-server {
 .theme--dark .server-form {
   background: #2A2A2A;
   color: #F5F5F5;
-  border-width: 0 2px 0 0;
+  border-width: 0 1px 0 0;
   border-style: solid;
   border-color: #555555;
 }
@@ -352,17 +352,17 @@ button.btn-toggle-server {
   height: 3px;
   top: auto;
   bottom: -3px;
-  right: -2px;
+  right: -1px;
 }
 
 .theme--default .server-form:before {
-  border-width: 0 2px 0 0;
+  border-width: 0 1px 0 0;
   border-style: solid;
   border-color: #dee3e6;
 }
 
 .theme--dark .server-form:before {
-  border-width: 0 2px 0 0;
+  border-width: 0 1px 0 0;
   border-style: solid;
   border-color: #555555;
 }
