@@ -1,20 +1,47 @@
 {
   "name": "vars-jka-server-checker",
-  "version": "0.1.0",
+  "productName": "Vars JKA Server Checker",
+  "author": "var",
+  "version": "0.1.1",
+  "homepage": "./",
   "private": true,
+  "main": "public/electron.js",
+  "build": {
+    "appId": "com.vars-jka-server-checker",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "electron-is-dev": "^1.2.0",
+    "express": "^4.17.1",
+    "gamedig": "^2.0.22",
+    "pino": "^6.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "electron-window-state": "^5.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "build-css": "node-sass --output-style expanded src/scss/styles.scss src/css/styles.css  --source-map src/css/styles.css.map && postcss -u autoprefixer -b \"latest 2 versions\" -o src/css/styles.min.css < src/css/styles.css && cleancss src/css/styles.css -o src/css/styles.min.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "electron-dev": "concurrently \"SET BROWSER=none && npm run react-start\" \"wait-on http://localhost:3000 && electron .\" \"npm run watch-css\"",
+    "electron-pack": "build --em.main=build/electron.js",
+    "electron-build": "electron-builder",
+    "build": "npm run react-build && npm run electron-build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +57,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "clean-css": "^4.2.3",
+    "concurrently": "^5.3.0",
+    "electron": "^9.2.1",
+    "electron-builder": "^22.8.0",
+    "electron-window-state": "^5.0.3",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "postcss": "^7.0.32",
+    "wait-on": "^5.2.0"
   }
 }
