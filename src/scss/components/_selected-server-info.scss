@@ -5,12 +5,12 @@ section#server {
   height: 100%;
   @include scrollbar();
   overflow-y: auto;
-  padding: $btn-toggle-server-height calc(2% + #{$spacer}) $spacer calc(2% + #{$spacer});
+  padding: $spacer * 1.5;
   #server__details {
     & > ul {
       @include list-unstyled();
       font-size: 16px;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.1px;
       & > li {
         margin: 6px 0;
         &:first-child {margin-top: 0;}
@@ -21,7 +21,7 @@ section#server {
   table {    
     width: calc(100% + 4px);
     padding: 0;
-    margin: $spacer auto $spacer * 2 auto;
+    margin: $spacer * 1.5 auto $spacer * 2 auto;
     margin-left: -2px;
     thead, tbody {
       padding: 0;

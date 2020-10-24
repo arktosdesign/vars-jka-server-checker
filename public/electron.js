@@ -25,7 +25,7 @@ function createWindow() {
     height: mainWindowState.height,
     // minHeight: 420,
     // minWidth: 459,
-    minHeight: 620,
+    minHeight: 460,
     minWidth: 636,
     frame: false,
     webPreferences: {
