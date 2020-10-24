@@ -105,14 +105,14 @@ button {
 
 button.change-theme {
   position: absolute;
-  bottom: 16px;
+  bottom: 12px;
   font-family: "Circular Std Book", sans-serif;
-  right: 16px;
+  right: 12px;
   z-index: 9999;
   font-size: 12px;
   letter-spacing: 0.6px;
   font-weight: bold;
-  width: 148px;
+  width: 142px;
   padding: 12px 0;
   border-radius: 6px;
 }
@@ -534,6 +534,7 @@ ul#fav-list {
   list-style: none;
   list-style-type: none;
   padding-right: 6px;
+  padding-bottom: 20px;
   height: 100%;
   overflow-y: auto;
 }

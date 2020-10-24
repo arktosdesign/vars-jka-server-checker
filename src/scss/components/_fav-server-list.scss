@@ -9,6 +9,7 @@
 ul#fav-list {
   @include list-unstyled();
   padding-right: 6px;
+  padding-bottom: $spacer * 1.25;
   height: 100%;
   overflow-y: auto;
   @include scrollbar();
