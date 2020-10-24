@@ -1,0 +1,121 @@
+.fav-list-wrapper {
+  position: absolute;
+  top: $btn-toggle-server-height + 14px;
+  left: 0;
+  width: $server-form-width;
+  padding: $spacer / 2 4px 0 6px;
+  height: calc(100% - #{$btn-toggle-server-height + 20px});
+}
+ul#fav-list {
+  @include list-unstyled();
+  padding-right: 6px;
+  height: 100%;
+  overflow-y: auto;
+  @include scrollbar();
+  
+  & > li.fav-server {
+    position: relative;
+    display: block;
+    padding: $spacer / 1.25 $spacer;    
+    border-radius: $border-radius * 1.25;
+    margin: $spacer / 4 0;
+    &:first-child {margin-top: 0;}
+    &:last-child {margin-bottom: 0;}
+    cursor: pointer;
+    border-width: $border-width / 2;
+    border-style: solid;
+    @include themed() {
+      background: t($card-bg);
+      border-color: t($card-bg);
+    }
+    transition: border-color $timing-xs $ease-in, background $timing-xs $ease-in;
+    &:hover {
+      @include themed() {
+        background: t($card-bg-hover);
+      }
+      transition: background $timing-md $ease-out;
+      .fav-server__actions {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+    &:active {
+      @include themed() {
+        background: darken(t($card-bg), 2.5%);
+      }
+      transition: background $timing-sm $ease-out;
+    }
+    .fav-server__name {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 900;
+      font-size: 18px;
+      flex-basis: 100%;      
+    }
+    .fav-server__address {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      margin-top: $spacer / 6;
+      @include themed() {
+        color: t($text-secondary);
+      }
+      transition: color $timing-xs $ease-in;
+    }
+    .fav-server__name,
+    .fav-server__address {
+      padding-right: 30px + 6px;
+    }
+
+    .fav-server__actions {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: auto;
+      & > button {
+        width: auto;
+        height: 32px;
+        padding: 0 $spacer 0 $spacer / 2;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        border: none;
+        background: none;
+        @include themed() {
+          color: t($text-secondary);
+        }
+        transition: color $timing-xs $ease-in, opacity $timing-sm $ease-out;
+        opacity: 0.4;
+        & > svg {
+          width: 10px;
+          path {
+            @include themed() {
+              fill: t($text);
+            }   
+          }
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $timing-sm $ease-out;
+    }
+    &.is--active {
+      @include themed() {
+        background: t($card-bg-active);
+        border-color: t($border);
+      }
+    }
+
+  }
+}

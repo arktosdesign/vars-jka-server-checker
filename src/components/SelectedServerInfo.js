@@ -64,7 +64,7 @@ class SelectedServerInfo extends Component {
               <tr>                
                 <th align="left" valign="top" width="68%">Name</th>
                 <th align="center" valign="top" width="16%">Ping</th>
-                <th align="center" valign="top" width="16%">Score</th>
+                <th align="right" valign="top" width="16%">Score</th>
               </tr>
             }
             
@@ -81,7 +81,7 @@ class SelectedServerInfo extends Component {
                   <tr key={id}>
                     <td align="left" valign="top" width="68%">{index.name}</td>
                     <td align="center" valign="top" width="16%">{index.ping}</td>
-                    <td align="center" valign="top" width="16%">{index.frags}</td>
+                    <td align="right" valign="top" width="16%">{index.frags}</td>
                   </tr>
                 ))
               }

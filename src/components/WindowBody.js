@@ -4,6 +4,7 @@ import FavServerList from './FavServerList';
 
 class WindowBody extends Component { 
 
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -13,14 +14,22 @@ class WindowBody extends Component {
       queriedServer: [],
       queriedServerPlayers: [],
       serverListInfo: [],
+      collapseOpen: false,
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleIpChange = this.handleIpChange.bind(this);
     this.handlePortChange = this.handlePortChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateList = this.handleUpdateList.bind(this);
+    
+    this.toggleCollapse= this.toggleCollapse.bind(this);
+
   }
 
+  toggleCollapse() {
+    const currentState = this.state.collapseOpen;
+    this.setState({ collapseOpen: !currentState });
+  };
 
   handleUpdateList = (updatedServerList) => {
     this.setState({
@@ -109,17 +118,29 @@ class WindowBody extends Component {
 
 
   render() {
+
     return (
     <div className="window-body">
-        <AddServerForm
-          handleNameChange={this.handleNameChange}
-          handleIpChange={this.handleIpChange}
-          handlePortChange={this.handlePortChange}
-          handleSubmit={this.handleSubmit} />
-        <FavServerList
-          handleUpdateList={this.handleUpdateList}
-          list={this.state.serverListInfo} />
+      <div className="window-body__inner">
+
+          <div className="server-form">
+            <button onClick={this.toggleCollapse} className="btn-toggle-server">{this.state.collapseOpen ? 'Close': 'Add Server'}</button>
+            <div className={`toggle-wrapper ${this.state.collapseOpen ? 'is--open': ''}`}>
+              <AddServerForm                
+                handleNameChange={this.handleNameChange}
+                handleIpChange={this.handleIpChange}
+                handlePortChange={this.handlePortChange}
+                handleSubmit={this.handleSubmit} />
+            </div>
+          </div>
+          <FavServerList
+              handleUpdateList={this.handleUpdateList}
+              list={this.state.serverListInfo} />
+
+
+      </div>
     </div>
+
     )
   }
 }

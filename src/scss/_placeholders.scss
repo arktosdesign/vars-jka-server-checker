@@ -1,0 +1,23 @@
+%big-btn {
+  font-family: $ui-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  color: $white;
+  border: none;
+  background: $primary;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  transition: background $timing-md $ease-out;
+  &:hover {
+    background: $primary--dark;
+  }
+  &:active {
+    background: darken($primary--dark, 5%);
+    transition: background $timing-xs $ease-in;
+  }
+}

@@ -1,0 +1,33 @@
+button {
+  cursor: pointer;
+}
+
+button.change-theme {
+  position: absolute;
+  bottom: 16px;
+  font-family: $ui-font;
+  right: 16px;
+  z-index: 9999;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  font-weight: bold;
+  width: 148px;
+  padding: $input-padding-y * 1.5 0;
+  border-radius: $border-radius;
+  @include themed() {
+    background: t($card-bg);
+    color: t($text);
+    border-width: $border-width / 2;
+    border-style: solid;
+    border-color: t($border-secondary);
+  }
+}
+
+
+
+button.btn-toggle-server {  
+  @extend %big-btn;
+  width: calc(100% - 14px);
+  margin: 10px 0px 0px 6px;
+  height: $btn-toggle-server-height;
+}

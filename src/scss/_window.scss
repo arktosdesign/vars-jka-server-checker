@@ -1,0 +1,38 @@
+.window {
+  -webkit-user-select: none;
+}
+.title-bar {
+  -webkit-app-region: drag;
+}
+
+.window {
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
+  padding: 3px;
+  height: 100vh;
+  @include themed() {
+    background: t($bg);
+  }
+  transition: background $timing-xs $ease-in;
+}
+
+.window {
+  @include themed() {
+    color: t($text);
+    background: t($bg);
+  }
+  transition: color $timing-xs $ease-in, background $timing-xs $ease-in;
+}
+
+.window-body {
+  position: relative;
+  height: calc(100% - 20px);
+}
+.window-body__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

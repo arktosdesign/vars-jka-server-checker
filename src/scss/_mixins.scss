@@ -1,0 +1,64 @@
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin list-unstyled() {
+  list-style: none;
+  list-style-type: none;
+  & > li {
+    list-style: none;
+    list-style-type: none;
+  }
+}
+
+@mixin scrollbar() {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    // border: 0px none #ffffff;
+    border: none;
+    border-radius: 50px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $primary--dark;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background: darken($primary--dark, 5%);
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    // border: 0px none #ffffff;
+    border: none;
+    border-radius: 50px;
+  }
+  &::-webkit-scrollbar-track:hover {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track:active {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

@@ -23,13 +23,14 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "electron-is-dev": "^1.2.0",
+    "electron-window-state": "^5.0.3",
     "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
     "gamedig": "^2.0.22",
     "pino": "^6.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "electron-window-state": "^5.0.3"
+    "react-scripts": "3.4.3"
   },
   "scripts": {
     "react-start": "react-scripts start",
@@ -41,7 +42,8 @@
     "electron-dev": "concurrently \"SET BROWSER=none && npm run react-start\" \"wait-on http://localhost:3000 && electron .\" \"npm run watch-css\"",
     "electron-pack": "build --em.main=build/electron.js",
     "electron-build": "electron-builder",
-    "build": "npm run react-build && npm run electron-build"
+    "build": "npm run react-build && npm run electron-build",
+    "start": "npm run electron-dev"
   },
   "eslintConfig": {
     "extends": "react-app"

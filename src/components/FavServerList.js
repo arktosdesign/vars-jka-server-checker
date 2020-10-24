@@ -62,6 +62,7 @@ class FavServerList extends Component {
 
   }
 
+
   queryServer = (ip, port) => { 
     const apiUrl = "https://tranquil-sands-27723.herokuapp.com/"
     fetch(`${apiUrl}?ip=${encodeURIComponent(ip)}&port=${encodeURIComponent(port)}`)
@@ -88,20 +89,29 @@ class FavServerList extends Component {
   render() {
     return (
       <>
-        <ul id="fav-list" className="tree-view">        
-          {this.state.currentFavServerList.map((index, id) => (
-          <li key={`${index.name}${index}`} id={id} onClick={this.getQueriedServer.bind(this)} className={`fav-server ${id === this.state.activeLink ? "is--active" : ""}`}>
-            <div className="fav-server__name">{index[0]}</div>
-            <div className="fav-server__address">
-              <div className="fav-server__ip" id={`fav-server__ip--` + id}>{index[1]}</div>:
-              <div className="fav-server__port" id={`fav-server__port--` + id}>{index[2]}</div>
-            </div>
-            <div className="fav-server__actions">
-              <button className="delete-fav" type="button" onMouseUp={this.deleteFavItem.bind(this, id, index)}>Delete</button>              
-            </div>
-          </li>
-          ))}
-        </ul>
+        <div className="fav-list-wrapper">
+          <ul id="fav-list">        
+            {this.state.currentFavServerList.map((index, id) => (
+            <li key={`${index.name}${index}`} id={id} onClick={this.getQueriedServer.bind(this)} className={`fav-server ${id === this.state.activeLink ? "is--active" : ""}`}>
+              <div className="fav-server__name">{index[0]}</div>
+              <div className="fav-server__address">
+                <div className="fav-server__ip" id={`fav-server__ip--` + id}>{index[1]}</div>:
+                <div className="fav-server__port" id={`fav-server__port--` + id}>{index[2]}</div>
+              </div>
+              <div className="fav-server__actions">
+                <button className="delete-fav" type="button" onMouseUp={this.deleteFavItem.bind(this, id, index)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 58.1 58.1">
+                    <g transform="translate(0,-952.36218)">
+                      <path d="M56.6,953.8c-2-2-5.1-2-7.1,0L29,974.3L8.5,953.8c-2-2-5.1-2-7.1,0c-2,2-2,5.1,0,7.1L22,981.4l-20.5,20.5c-2,2-2,5.1,0,7.1
+                        c2,2,5.1,2,7.1,0L29,988.5l20.5,20.5c2,2,5.1,2,7.1,0c2-2,2-5.1,0-7.1l-20.5-20.5l20.5-20.5C58.6,958.9,58.6,955.8,56.6,953.8z"/>
+                    </g>
+                  </svg>
+                </button>              
+              </div>
+            </li>
+            ))}
+          </ul>
+        </div>
         <SelectedServerInfo
           serverInfo={this.state.queriedServer} />
       </>

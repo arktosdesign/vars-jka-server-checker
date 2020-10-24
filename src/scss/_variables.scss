@@ -1,0 +1,96 @@
+$primary:             #46528f;
+$primary--dark:       darken($primary, 10%);
+$white:               #FFFFFF;
+// Light Theme
+$bg--light:           #F5F5F5;
+$bg--card--light:     #efeff3;
+$text--light:         #111111;
+$text--2--light:      #6A6A6A;
+$border--light:       #dee3e6;
+$border--2--light:    #AAAAAA;
+
+// Dark Theme
+$bg--dark:            #191a1b;
+$bg--card--dark:      #2A2A2A;
+$text--dark:          #F5F5F5;
+$text--2--dark:       #D1D1D1;
+$border--dark:        #555555;
+$border--2--dark:     #444444;
+
+$themes: (
+  default: (
+    bg: $bg--light,
+    card-bg: $bg--card--light,
+    card-bg-hover: lighten($bg--card--light, 2.5%),
+    card-bg-active: lighten($bg--card--light, 4%),
+    text: $text--light,
+    text-secondary: $text--2--light,
+    link: $text--light,
+    hover: $text--2--light,
+    border: $border--light,
+    border-secondary: $border--2--light
+  ),
+  dark: (
+    bg: $bg--dark,
+    card-bg: $bg--card--dark,
+    card-bg-hover: lighten($bg--card--dark, 2.5%),
+    card-bg-active: lighten($bg--card--dark, 4%),
+    text: $text--dark,
+    text-secondary: $text--2--dark,
+    link: $text--dark,
+    hover: $text--2--dark,
+    border: $border--dark,
+    border-secondary: $border--2--dark
+  ),
+);
+
+$bg: 'bg';
+$card-bg: 'card-bg';
+$card-bg-hover: 'card-bg-hover';
+$card-bg-active: 'card-bg-active';
+$text: 'text';
+$text-secondary: 'text-secondary';
+$link: 'link';
+$hover: 'hover';
+$border: 'border';
+$border-secondary: 'border-secondary';
+
+
+// Type
+$ui-font:     'Circular Std Book', sans-serif;
+$system-font: 'Arial', sans-serif;
+// $system-font: "system";
+
+// Layout
+$server-form-width: 256px;
+$btn-toggle-server-height: 48px;
+
+
+// Spacer
+$spacer: 16px;
+
+
+// Forms
+$input-padding-x:   8px;
+$input-padding-y:   8px;
+
+// Shadows
+$box-shadow: 0px 4px 8px rgba(0,0,0,0.12);
+
+// Transitions
+$timing-xs:   48ms;
+$timing-sm:   140ms;
+$timing-md:   380ms;
+$timing-lg:   560ms;
+$timing-xl:   980ms;
+// $ease-in:     cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$ease-in:     cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$ease-out:    cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$ease-in-out: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+
+// Borders
+$border-width:      2px;
+$border-radius-sm:  2px;
+$border-radius:     6px;
+$border-radius-lg:  12px;
