@@ -4,7 +4,7 @@ form#queryserver {
   max-width: calc(100% - 14px);
   margin-left: 6px;
   box-shadow: $box-shadow;
-  padding: $spacer * 1.1;
+  padding: $spacer * 1.25 $spacer / 1.15;
   border-radius: $border-radius;
   @include themed() {
     background: t($bg);
@@ -13,7 +13,7 @@ form#queryserver {
   & > span {
     font-weight: bold;
     display: block;
-    margin: 0 0 5px 0;
+    margin: 0 0 6px 0;
     font-size: 13px;
     letter-spacing: 0.6px;
     @include themed() {
@@ -62,7 +62,7 @@ form#queryserver {
     flex-direction: row;
     width: 100%;
     max-width: 100%;
-    margin-bottom: $spacer / 2;    
+    margin-bottom: $spacer / 1.5;    
     & > input {
       width: auto;
       max-width: auto;
@@ -74,7 +74,7 @@ form#queryserver {
     }
     &.form-group--ip-port {
       & > input:first-child {
-        width: calc(68% - #{$spacer / 2});
+        width: calc(68% - #{$spacer / 1.5});
       }
       & > input:last-child {
         width: 32%;
