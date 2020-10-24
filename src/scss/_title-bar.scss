@@ -36,7 +36,7 @@
   font-weight: bold;
   letter-spacing: 0;
   margin-right: 24px;
-  padding: 3px 2px 3px 4px;
+  padding: 3px 2px 3px 6px;
 }
 .title-bar-controls {
   display: flex;
@@ -47,7 +47,7 @@
   display: block;
   // min-width: 16px;
   // min-height: 14px;
-  min-width: 28px;
+  min-width: 30px;
   min-height: 28px;
   background: none;
   border: none;
@@ -82,7 +82,7 @@
   & > svg {
     width: 11px;
     align-self: flex-end;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
   }
 }
 
