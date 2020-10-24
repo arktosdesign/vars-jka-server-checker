@@ -1,8 +1,8 @@
 version: 0.1.2
 files:
   - url: Vars-JKA-Server-Checker-Setup-0.1.2.exe
-    sha512: Ii5+QZmRKrHHvjZQ8W97fv8cDk31rOXGNk2Wrn8Lnl813B+rlMCKbi6UX/hLB8jSU7yanVjZdMEAa4H7/8TLvg==
-    size: 70526635
+    sha512: 74La5Uw/CBh5v4TnLPhwzE3PJu8/tvs06gjXIx48I1jKhvR6kSTPSy+2JEOTnhcqamkIaRtSc4B5cK8x/Pi1DQ==
+    size: 70526532
 path: Vars-JKA-Server-Checker-Setup-0.1.2.exe
-sha512: Ii5+QZmRKrHHvjZQ8W97fv8cDk31rOXGNk2Wrn8Lnl813B+rlMCKbi6UX/hLB8jSU7yanVjZdMEAa4H7/8TLvg==
-releaseDate: '2020-10-24T23:13:26.458Z'
+sha512: 74La5Uw/CBh5v4TnLPhwzE3PJu8/tvs06gjXIx48I1jKhvR6kSTPSy+2JEOTnhcqamkIaRtSc4B5cK8x/Pi1DQ==
+releaseDate: '2020-10-24T23:17:45.525Z'

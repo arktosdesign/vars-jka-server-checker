@@ -47,7 +47,7 @@
   display: block;
   // min-width: 16px;
   // min-height: 14px;
-  min-width: 30px;
+  min-width: 32px;
   min-height: 28px;
   background: none;
   border: none;
@@ -80,7 +80,7 @@
 
 .title-bar-controls button[aria-label="Minimize"] {
   & > svg {
-    width: 11px;
+    width: 10px;
     align-self: flex-end;
     margin-bottom: 8px;
   }
@@ -93,7 +93,7 @@
 
 .title-bar-controls button[aria-label="Close"] {
   & > svg {
-    width: 11px;
+    width: 10px;
     align-self: center;
   }
 }

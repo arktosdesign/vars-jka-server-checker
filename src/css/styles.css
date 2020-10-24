@@ -202,7 +202,7 @@ button.btn-toggle-server {
 .title-bar-controls button {
   padding: 0;
   display: block;
-  min-width: 30px;
+  min-width: 32px;
   min-height: 28px;
   background: none;
   border: none;
@@ -242,13 +242,13 @@ button.btn-toggle-server {
 }
 
 .title-bar-controls button[aria-label="Minimize"] > svg {
-  width: 11px;
+  width: 10px;
   align-self: flex-end;
   margin-bottom: 8px;
 }
 
 .title-bar-controls button[aria-label="Close"] > svg {
-  width: 11px;
+  width: 10px;
   align-self: center;
 }
 
