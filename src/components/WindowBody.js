@@ -51,14 +51,14 @@ class WindowBody extends Component {
   }
 
   handleIpChange = (event) => {    
-    this.setState({
-      ip: event.target.value
-    }, () => {
-      console.log(this.state.ip);
-    });
     // this.setState({
     //   ip: event.target.value
-    // });    
+    // }, () => {
+    //   console.log(this.state.ip);
+    // });
+    this.setState({
+      ip: event.target.value
+    });    
   }
 
   handlePortChange = (event) => {    
@@ -74,10 +74,14 @@ class WindowBody extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    // NEEDS VALIDATION IP AND PORT AND NAME CHECK
-    // if (this.state.ip !== "" && this.state.port !== "" && this.state.name !== "") {      
-
+     
+    if (
+        this.state.name !== ""
+        &&
+        /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(this.state.ip)
+        &&
+        /^([0-9]{5})$/.test(this.state.port)
+      ) {
       this.setState({
         serverListInfo: [...this.state.serverListInfo, [this.state.name, this.state.ip, this.state.port]]      
       }, () => {
@@ -95,9 +99,9 @@ class WindowBody extends Component {
           addServerForm.reset();
         });
       });
-
-    // }
+    }
   }
+
 
 
   componentDidMount() {    

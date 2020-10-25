@@ -31,8 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const themePref = JSON.parse(localStorage.getItem('vars-theme'));
-    console.log(themePref);
+    const themePref = JSON.parse(localStorage.getItem('vars-theme'));    
     if (themePref === 'theme--default') {
       this.setState({
         dark: false

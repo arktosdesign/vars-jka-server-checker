@@ -88,7 +88,7 @@ class FavServerList extends Component {
         }
       })
       .catch((error) => {
-        console.log('Server not found')
+        // console.log('Server not found')
         this.setState({
           serverExists: false,
         })
