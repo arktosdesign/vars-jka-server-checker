@@ -28,9 +28,9 @@ function createWindow() {
     minHeight: 460,
     minWidth: 636,
     frame: false,
+    icon: __dirname + '/favicon.ico',
     webPreferences: {
       nodeIntegration: true
-      // preload: path.join(__dirname, 'preload.js')
     }
   });
 

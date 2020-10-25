@@ -6,9 +6,24 @@ class SelectedServerInfo extends Component {
     super(props)
     this.state ={
         serverInfo: this.props.serverInfo,
-        serverPlayers: null
+        serverPlayers: null,
+        copySuccess: 'Copy connection info',
+        copyData: this.props.copyData
       }
     }
+
+  copyToClipboard = (e) => {
+    navigator.clipboard.writeText(e.target.value);
+    this.setState({
+      copySuccess: 'Copied!'
+    });
+  };
+
+  componentWillReceiveProps() {
+    this.setState({
+      copySuccess: 'Copy connection info',
+    })
+  }
 
   componentDidUpdate(prevProps) {
     if( this.props.serverInfo !== prevProps.serverInfo ) {
@@ -16,6 +31,16 @@ class SelectedServerInfo extends Component {
         serverInfo: this.props.serverInfo,
         serverPlayers: this.props.serverInfo.players
       });
+    }
+    if( this.props.copyStatus !== prevProps.copyStatus ) {
+      this.setState({
+        copySuccess: this.props.copyStatus
+      })
+    }
+    if( this.props.copyData !== prevProps.copyData ) {
+      this.setState({
+        copyData: this.props.copyData
+      })
     }
   }
 
@@ -28,8 +53,9 @@ class SelectedServerInfo extends Component {
       </div>
         <section id="server">
           <span id="server__details">
-            <ul>
-              {this.props.serverExists == false && 
+            <ul className="server__info-key">
+
+              {this.props.serverExists === false && 
                 <li>
                   <strong>Server not found.</strong>
                 </li>
@@ -57,6 +83,13 @@ class SelectedServerInfo extends Component {
                   <strong>Password:</strong> Yes
                 </li>
               }
+
+              {this.state.serverInfo.name && 
+                <li>
+                  <button className="copy-to-clipboard" value={this.state.copyData} onClick={this.copyToClipboard}>{this.state.copySuccess}</button>
+                </li>
+              }
+
             </ul>
           </span>
 
@@ -75,7 +108,7 @@ class SelectedServerInfo extends Component {
             
             {this.state.serverPlayers && this.state.serverPlayers <= 0 &&
               <tr>
-                <th colSpan="3" align="left" valign="top" class="no-players">No players found on the server</th>
+                <th colSpan="3" align="left" valign="top" className="no-players">No players found on the server</th>
               </tr>
             }      
 

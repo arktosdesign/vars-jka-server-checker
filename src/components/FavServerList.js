@@ -8,6 +8,7 @@ class FavServerList extends Component {
     activeLink: null,
     currentFavServerList: [],
     serverExists: true,
+    copyConnection: null
   }
   
   componentDidUpdate(prevProps) {
@@ -31,7 +32,8 @@ class FavServerList extends Component {
 
     let favId = parseInt(e.currentTarget.id);
     this.setState({
-      activeLink: favId
+      activeLink: favId,      
+      copyConnection: '/connect ' + listItemIp + ':' + listItemPort
     });
   }
   
@@ -67,7 +69,7 @@ class FavServerList extends Component {
   queryServer = (ip, port) => { 
     this.setState({
       queriedServer: [],
-      serverExists: true,
+      serverExists: true
     });
     const apiUrl = "https://tranquil-sands-27723.herokuapp.com/"
     fetch(`${apiUrl}?ip=${encodeURIComponent(ip)}&port=${encodeURIComponent(port)}`)
@@ -81,7 +83,7 @@ class FavServerList extends Component {
         }
         else {
           this.setState({
-            queriedServer: res[0]
+            queriedServer: res[0],
           })
         }
       })
@@ -122,7 +124,8 @@ class FavServerList extends Component {
         </div>
         <SelectedServerInfo
           serverInfo={this.state.queriedServer}
-          serverExists={this.state.serverExists} />
+          serverExists={this.state.serverExists}
+          copyData={this.state.copyConnection} />
       </>
     )
   }

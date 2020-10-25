@@ -112,6 +112,7 @@ ul#fav-list {
       transition: opacity $timing-sm $ease-out;
     }
     &.is--active {
+      cursor: pointer;
       @include themed() {
         background: t($card-bg-active);
         border-color: t($border);

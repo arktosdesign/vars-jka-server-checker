@@ -2,7 +2,7 @@
   "name": "vars-jka-server-checker",
   "productName": "Vars JKA Server Checker",
   "author": "var",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "homepage": "./",
   "private": true,
   "main": "public/electron.js",
@@ -13,7 +13,8 @@
       "node_modules/**/*"
     ],
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "assets",
+      "output": "release"
     }
   },
   "dependencies": {

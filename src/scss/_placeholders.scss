@@ -21,3 +21,38 @@
     transition: background $timing-xs $ease-in;
   }
 }
+
+%outline-btn {
+  font-family: $ui-font;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  box-shadow: $box-shadow-sm;
+  border-radius: $border-radius;
+  border-width: $border-width / 2;
+  border-style: solid;
+  @include themed() {    
+    color: t($text);
+    border-color: t($border);
+  }
+  transition: color $timing-xs $ease-in, border-color $timing-xs $ease-in, background $timing-xs $ease-in;
+  &:hover {
+    @include themed() {    
+      background: t($highlight);
+      color: darken(t($text), 2.5%);   
+    }    
+    transition: background $timing-md $ease-out, color $timing-md $ease-out;
+  }
+  &:active {
+    @include themed() {    
+      background: darken(t($highlight), 2.5%);
+    }  
+    transition: background $timing-xs $ease-in;
+  }
+}

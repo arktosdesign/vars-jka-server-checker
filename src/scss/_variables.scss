@@ -2,12 +2,13 @@ $primary:             #46528f;
 $primary--dark:       darken($primary, 10%);
 $white:               #FFFFFF;
 // Light Theme
-$bg--light:           #F5F5F5;
+$bg--light:           #f8f8f8;
 $bg--card--light:     #efeff3;
 $text--light:         #111111;
 $text--2--light:      #6A6A6A;
 $border--light:       #dee3e6;
 $border--2--light:    #AAAAAA;
+$highlight--light:    #edeef3;
 
 // Dark Theme
 $bg--dark:            #191a1b;
@@ -16,6 +17,7 @@ $text--dark:          #F5F5F5;
 $text--2--dark:       #D1D1D1;
 $border--dark:        #555555;
 $border--2--dark:     #444444;
+$highlight--dark:     #232425;
 
 $themes: (
   default: (
@@ -28,7 +30,8 @@ $themes: (
     link: $text--light,
     hover: $text--2--light,
     border: $border--light,
-    border-secondary: $border--2--light
+    border-secondary: $border--2--light,
+    highlight: $highlight--light
   ),
   dark: (
     bg: $bg--dark,
@@ -40,7 +43,8 @@ $themes: (
     link: $text--dark,
     hover: $text--2--dark,
     border: $border--dark,
-    border-secondary: $border--2--dark
+    border-secondary: $border--2--dark,
+    highlight: $highlight--dark
   ),
 );
 
@@ -54,12 +58,14 @@ $link: 'link';
 $hover: 'hover';
 $border: 'border';
 $border-secondary: 'border-secondary';
+$highlight: 'highlight';
 
 
 // Type
 $ui-font:     'Circular Std Book', sans-serif;
 $system-font: 'Arial', sans-serif;
 // $system-font: "system";
+
 
 // Layout
 $server-form-width: 266px;
@@ -75,7 +81,9 @@ $input-padding-x:   8px;
 $input-padding-y:   8px;
 
 // Shadows
+$box-shadow-sm: 0px 2px 4px rgba($primary,0.08);
 $box-shadow: 0px 4px 8px rgba(0,0,0,0.12);
+$box-shadow-lg: 0px 8px 16px rgba(0,0,0,0.16);
 
 // Transitions
 $timing-xs:   48ms;
