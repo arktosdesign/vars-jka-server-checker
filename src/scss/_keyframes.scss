@@ -16,3 +16,24 @@
     transform: translateY(0px);
   }
 }
+
+@keyframes fade-in-spin-l {
+  0% {
+    // opacity: 0;
+    transform: rotate(-145deg);
+  }
+  100% {
+    // opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+@keyframes fade-in-spin-r {
+  0% {
+    // opacity: 0;
+    transform: rotate(180deg);
+  }
+  100% {
+    // opacity: 1;
+    transform: rotate(0deg);
+  }
+}

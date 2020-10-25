@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import icon from '../icon32.png';
 const { ipcRenderer } = window.require('electron');
 class TitleBar extends Component {  
   minimizeWindow() {
@@ -29,7 +30,10 @@ class TitleBar extends Component {
   render() {
     return (
       <div className="title-bar" id="title-bar">
-        <div className="title-bar-text">{this.props.title}</div>
+        <div className="title-bar-text">
+          <img src={icon} alt={this.props.title} className="title-bar__icon"/>
+          {this.props.title}
+        </div>
         <div className="title-bar-controls">
           <button aria-label="Minimize" id="minimize" onClick={this.minimizeWindow.bind(this)}>          
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 78 14">

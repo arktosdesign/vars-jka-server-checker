@@ -1,0 +1,129 @@
+.settings-wrapper {
+  position: absolute;
+  bottom: $spacer * 1.5;
+  right: $spacer * 1.5;
+  z-index: 9999;
+  button.settings-toggle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: $box-shadow;
+    background: $primary;
+    transition: background $timing-md $ease-out;
+    &:hover {
+      background: $primary--dark;
+    }    
+    &:active {
+      background: darken($primary--dark, 5%);
+      transition: background $timing-xs $ease-in;
+    }
+    & > svg {
+      display: block;
+      margin: 0 auto;      
+      // opacity: 0.8;
+      will-change: opacity, transform;
+      backface-visibility: hidden;
+      transform-origin: 50% 50%;  
+      path {
+        fill: $white;
+      }
+      &.settings-toggle-icon__cog {
+        width: 22px;
+        animation-name: fade-in-spin-l;
+        animation-duration: $timing-md;
+        animation-fill-mode: forwards;
+        animation-timing-function: $ease-out;    
+      }
+      &.settings-toggle-icon__close {
+        width: 16px;
+        animation-name: fade-in-spin-r;
+        animation-duration: $timing-md;
+        animation-fill-mode: forwards;
+        animation-timing-function: $ease-out;    
+      }
+    }
+  }
+  .settings__box {
+    position: absolute;
+    bottom: 50%;
+    right: calc(100% + 10px);
+    padding: 0 $spacer;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: scaleX(0.96) translateY(50%);    
+    @include themed() {
+      background: t($card-bg);
+      color: t($text);
+    }
+    transition: color $timing-xs $ease-in, background $timing-xs $ease-in, opacity $timing-md $ease-out, transform $timing-sm $ease-out;
+  }
+  &.is--open {
+    .settings__box {
+      visibility: visible;
+      opacity: 1;
+      transform: scaleX(1) translateY(50%);
+    }
+  }
+}
+
+button.change-theme {
+  position: relative;
+  font-family: $ui-font;
+  font-size: 13px;
+  letter-spacing: 0.7px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  width: 118px;
+  padding: $spacer 0;
+  text-align: left;
+  @include themed() {
+    color: t($text);
+  }
+  transition: color $timing-xs $ease-in;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+  &:before {
+    width: 28px;
+    height: 10px;
+    border-radius: 64px;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    @include themed() {
+      background: t($border-secondary);
+    }
+    transition: background $timing-xs $ease-in, opacity $timing-xs $ease-in;
+  }
+  &:after {    
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+    transform: translateY(-50%) translateX(-11px);
+    background: #868994;
+    transition: background $timing-xs $ease-in, transform $timing-md $ease-out;
+  }
+  &.checked {
+    &:before {
+      opacity: 0.75;
+    }
+    &:after {
+      background: $primary;
+      transform: translateY(-50%) translateX(1px);
+    }
+  }
+}

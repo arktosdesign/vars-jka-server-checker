@@ -2,28 +2,6 @@ button {
   cursor: pointer;
 }
 
-button.change-theme {
-  @extend %outline-btn;
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  z-index: 9999;
-  font-size: 12px;
-  letter-spacing: 0.6px;
-  font-weight: bold;
-  width: 152px;
-  padding: $input-padding-y * 1.5 0;
-  border-radius: $border-radius;
-  // @include themed() {
-  //   background: t($card-bg);
-  //   color: t($text);
-  //   border-width: $border-width / 2;
-  //   border-style: solid;
-  //   border-color: t($border-secondary);
-  // }
-}
-
-
 
 button.btn-toggle-server {  
   @extend %big-btn;
@@ -38,5 +16,6 @@ button.copy-to-clipboard {
   font-size: 12px;
   letter-spacing: 0.8px;
   height: 36px;
-  width: 164px;
+  width: 164px;  
 }
+

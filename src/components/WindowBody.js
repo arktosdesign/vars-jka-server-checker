@@ -21,9 +21,7 @@ class WindowBody extends Component {
     this.handlePortChange = this.handlePortChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateList = this.handleUpdateList.bind(this);
-    
     this.toggleCollapse= this.toggleCollapse.bind(this);
-
   }
 
   toggleCollapse() {
@@ -122,7 +120,6 @@ class WindowBody extends Component {
     return (
     <div className="window-body">
       <div className="window-body__inner">
-
           <div className="server-form">
             <button onClick={this.toggleCollapse} className="btn-toggle-server">{this.state.collapseOpen ? 'Close': 'Add Server'}</button>
             <div className={`toggle-wrapper ${this.state.collapseOpen ? 'is--open': ''}`}>
@@ -134,10 +131,8 @@ class WindowBody extends Component {
             </div>
           </div>
           <FavServerList
-              handleUpdateList={this.handleUpdateList}
-              list={this.state.serverListInfo} />
-
-
+            handleUpdateList={this.handleUpdateList}
+            list={this.state.serverListInfo} />
       </div>
     </div>
 

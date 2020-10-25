@@ -37,7 +37,19 @@
   letter-spacing: 0;
   margin-right: 24px;
   padding: 3px 2px 3px 6px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
 }
+
+img.title-bar__icon {
+  display: block;
+  margin: 0 8px 0 0;
+  width: 16px;
+  height: 16px;
+}
+
 .title-bar-controls {
   display: flex;
 }

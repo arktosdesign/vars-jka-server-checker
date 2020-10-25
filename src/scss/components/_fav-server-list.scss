@@ -17,7 +17,8 @@ ul#fav-list {
   & > li.fav-server {
     position: relative;
     display: block;
-    padding: $spacer / 1.25 $spacer;    
+    // padding: $spacer / 1.5 $spacer $spacer / 1.25 $spacer;    
+    padding: 10px $spacer;
     border-radius: $border-radius * 1.25;
     margin: $spacer / 4 0;
     &:first-child {margin-top: 0;}

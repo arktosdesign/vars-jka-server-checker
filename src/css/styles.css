@@ -24,7 +24,7 @@ button.btn-toggle-server:active, form#queryserver button:active {
   transition: background 48ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
-button.change-theme, button.copy-to-clipboard {
+button.copy-to-clipboard {
   font-family: "Circular Std Book", sans-serif;
   display: inline-flex;
   justify-content: center;
@@ -42,39 +42,39 @@ button.change-theme, button.copy-to-clipboard {
   transition: color 48ms cubic-bezier(0.47, 0, 0.745, 0.715), border-color 48ms cubic-bezier(0.47, 0, 0.745, 0.715), background 48ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
-.theme--default button.change-theme, .theme--default button.copy-to-clipboard {
+.theme--default button.copy-to-clipboard {
   color: #111111;
   border-color: #dee3e6;
 }
 
-.theme--dark button.change-theme, .theme--dark button.copy-to-clipboard {
+.theme--dark button.copy-to-clipboard {
   color: #F5F5F5;
   border-color: #555555;
 }
 
-button.change-theme:hover, button.copy-to-clipboard:hover {
+button.copy-to-clipboard:hover {
   transition: background 380ms cubic-bezier(0.165, 0.84, 0.44, 1), color 380ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.theme--default button.change-theme:hover, .theme--default button.copy-to-clipboard:hover {
+.theme--default button.copy-to-clipboard:hover {
   background: #edeef3;
   color: #0b0b0b;
 }
 
-.theme--dark button.change-theme:hover, .theme--dark button.copy-to-clipboard:hover {
+.theme--dark button.copy-to-clipboard:hover {
   background: #232425;
   color: #efefef;
 }
 
-button.change-theme:active, button.copy-to-clipboard:active {
+button.copy-to-clipboard:active {
   transition: background 48ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
-.theme--default button.change-theme:active, .theme--default button.copy-to-clipboard:active {
+.theme--default button.copy-to-clipboard:active {
   background: #e5e7ee;
 }
 
-.theme--dark button.change-theme:active, .theme--dark button.copy-to-clipboard:active {
+.theme--dark button.copy-to-clipboard:active {
   background: #1d1e1e;
 }
 
@@ -157,19 +157,6 @@ button {
   cursor: pointer;
 }
 
-button.change-theme {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  z-index: 9999;
-  font-size: 12px;
-  letter-spacing: 0.6px;
-  font-weight: bold;
-  width: 152px;
-  padding: 12px 0;
-  border-radius: 6px;
-}
-
 button.btn-toggle-server {
   width: calc(100% - 14px);
   margin: 10px 0px 0px 6px;
@@ -237,6 +224,17 @@ button.copy-to-clipboard {
   letter-spacing: 0;
   margin-right: 24px;
   padding: 3px 2px 3px 6px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+img.title-bar__icon {
+  display: block;
+  margin: 0 8px 0 0;
+  width: 16px;
+  height: 16px;
 }
 
 .title-bar-controls {
@@ -445,6 +443,160 @@ button.copy-to-clipboard {
   transform: scaleY(1) translateY(8px);
 }
 
+.settings-wrapper {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+}
+
+.settings-wrapper button.settings-toggle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+  background: #46528f;
+  transition: background 380ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.settings-wrapper button.settings-toggle:hover {
+  background: #353e6d;
+}
+
+.settings-wrapper button.settings-toggle:active {
+  background: #2d355c;
+  transition: background 48ms cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.settings-wrapper button.settings-toggle > svg {
+  display: block;
+  margin: 0 auto;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+}
+
+.settings-wrapper button.settings-toggle > svg path {
+  fill: #FFFFFF;
+}
+
+.settings-wrapper button.settings-toggle > svg.settings-toggle-icon__cog {
+  width: 22px;
+  animation-name: fade-in-spin-l;
+  animation-duration: 380ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.settings-wrapper button.settings-toggle > svg.settings-toggle-icon__close {
+  width: 16px;
+  animation-name: fade-in-spin-r;
+  animation-duration: 380ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.settings-wrapper .settings__box {
+  position: absolute;
+  bottom: 50%;
+  right: calc(100% + 10px);
+  padding: 0 16px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: 50% 100%;
+  transform: scaleX(0.96) translateY(50%);
+  transition: color 48ms cubic-bezier(0.47, 0, 0.745, 0.715), background 48ms cubic-bezier(0.47, 0, 0.745, 0.715), opacity 380ms cubic-bezier(0.165, 0.84, 0.44, 1), transform 140ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.theme--default .settings-wrapper .settings__box {
+  background: #efeff3;
+  color: #111111;
+}
+
+.theme--dark .settings-wrapper .settings__box {
+  background: #2A2A2A;
+  color: #F5F5F5;
+}
+
+.settings-wrapper.is--open .settings__box {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleX(1) translateY(50%);
+}
+
+button.change-theme {
+  position: relative;
+  font-family: "Circular Std Book", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.7px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  width: 118px;
+  padding: 16px 0;
+  text-align: left;
+  transition: color 48ms cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.theme--default button.change-theme {
+  color: #111111;
+}
+
+.theme--dark button.change-theme {
+  color: #F5F5F5;
+}
+
+button.change-theme:before, button.change-theme:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+button.change-theme:before {
+  width: 28px;
+  height: 10px;
+  border-radius: 64px;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  transition: background 48ms cubic-bezier(0.47, 0, 0.745, 0.715), opacity 48ms cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.theme--default button.change-theme:before {
+  background: #AAAAAA;
+}
+
+.theme--dark button.change-theme:before {
+  background: #444444;
+}
+
+button.change-theme:after {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-50%) translateX(-11px);
+  background: #868994;
+  transition: background 48ms cubic-bezier(0.47, 0, 0.745, 0.715), transform 380ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+button.change-theme.checked:before {
+  opacity: 0.75;
+}
+
+button.change-theme.checked:after {
+  background: #46528f;
+  transform: translateY(-50%) translateX(1px);
+}
+
 form#queryserver {
   position: relative;
   width: 100%;
@@ -633,7 +785,7 @@ ul#fav-list::-webkit-scrollbar-corner {
 ul#fav-list > li.fav-server {
   position: relative;
   display: block;
-  padding: 12.8px 16px;
+  padding: 10px 16px;
   border-radius: 7.5px;
   margin: 4px 0;
   cursor: pointer;
@@ -977,6 +1129,24 @@ section#server table tr:nth-child(even) > td {
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in-spin-l {
+  0% {
+    transform: rotate(-145deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fade-in-spin-r {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
