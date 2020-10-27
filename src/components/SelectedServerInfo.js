@@ -25,6 +25,7 @@ class SelectedServerInfo extends Component {
     })
   }
 
+
   componentDidUpdate(prevProps) {
     if( this.props.serverInfo !== prevProps.serverInfo ) {
       this.setState({

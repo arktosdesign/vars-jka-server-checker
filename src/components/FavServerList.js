@@ -3,40 +3,110 @@ import SelectedServerInfo from './SelectedServerInfo';
 
 class FavServerList extends Component {
 
-  state = {
-    queriedServer: [],
-    activeLink: null,
-    currentFavServerList: [],
-    serverExists: true,
-    copyConnection: null
+  constructor(props) {
+    super(props);
+    this.listRef = React.createRef();
+    this.state = {
+      queriedServer: [],
+      currentFavServerList: [],
+      serverExists: true,
+      copyConnection: null,
+      activeLink: null
+    }
   }
-  
+
+  moveUp = () => {
+    if (this.state.activeLink > 0) {
+      this.setState({
+        activeLink: this.state.activeLink - 1
+      }, () => {
+        this.queryFocusServer();
+      });
+    }
+    else if (this.state.activeLink === 0) {      
+      this.setState({
+        activeLink: this.state.currentFavServerList.length - 1
+      }, () => {   
+        setTimeout(function(){     
+          let listItemWrap = document.getElementById('fav-list');
+          listItemWrap.scrollTop = listItemWrap.scrollHeight;
+        }, 0.1);
+        this.queryFocusServer();
+      });
+    }
+  }
+
+  moveDown = () => {
+    if (this.state.activeLink < this.state.currentFavServerList.length - 1) {
+      this.setState({
+        activeLink: this.state.activeLink + 1
+      }, () => {
+        this.queryFocusServer();
+      });
+    }
+    else if (this.state.activeLink ===  this.state.currentFavServerList.length - 1) {
+      this.setState({
+        activeLink: 0
+      }, () => {
+        setTimeout(function(){
+          let listItemWrap = document.getElementById('fav-list');
+          listItemWrap.scrollTop = 0;
+        }, 0.1);
+        this.queryFocusServer();
+      });
+    }
+  }
+
+  onKeyPressed = (e) => {
+    if (e.keyCode == '38') { // up arrow
+      this.moveUp();
+    }
+    else if (e.keyCode == '40') { // down arrow
+      this.moveDown();
+    }
+  }  
+
+  queryFocusServer() {
+    let listItemIpId = `fav-server__ip--` + this.state.activeLink;
+    let listItemIp = document.getElementById(listItemIpId).innerText;
+    let listItemPortId = `fav-server__port--` + this.state.activeLink;
+    let listItemPort = document.getElementById(listItemPortId).innerText;    
+    this.queryServer(listItemIp, listItemPort);
+    this.setState({
+      copyConnection: '/connect ' + listItemIp + ':' + listItemPort
+    })
+  }
+
   componentDidUpdate(prevProps) {
     if( this.props.list !== prevProps.list ) {
       this.setState({
         currentFavServerList: [...this.props.list]
       }, () => {
         localStorage.setItem('servers', JSON.stringify(this.state.currentFavServerList));
-        // console.log('List component updated:' + this.state.currentFavServerList);
       });
     }
   }
 
   getQueriedServer = (e) => {
+
+    let target = e.currentTarget.id;
+    document.getElementById(target).focus();
+
     // Fields
-    let listItemIpId = `fav-server__ip--` + e.currentTarget.id;
+    let listItemIpId = `fav-server__ip--` + target;
     let listItemIp = document.getElementById(listItemIpId).innerText;
-    let listItemPortId = `fav-server__port--` + e.currentTarget.id;
+    let listItemPortId = `fav-server__port--` + target;
     let listItemPort = document.getElementById(listItemPortId).innerText;    
     this.queryServer(listItemIp, listItemPort);
 
-    let favId = parseInt(e.currentTarget.id);
+    let favId = parseInt(target);
     this.setState({
-      activeLink: favId,      
+      activeLink: favId,
+      currentDetailIndex: favId,
       copyConnection: '/connect ' + listItemIp + ':' + listItemPort
-    });
+    })
   }
-  
+
   deleteFavItem = (id) => {
     this.setState({
       queriedServer: []
@@ -50,7 +120,6 @@ class FavServerList extends Component {
         currentFavServerList: currentFavServerList        
       }, () => {
         this.props.handleUpdateList(this.state.currentFavServerList);
-        // console.log(this.state.currentFavServerList);
       });
     }
     else {
@@ -95,14 +164,19 @@ class FavServerList extends Component {
       });    
   }
 
-  
   render() {
     return (
       <>
         <div className="fav-list-wrapper">
-          <ul id="fav-list">        
+          <ul id="fav-list" ref={this.listRef} onKeyDown={this.onKeyPressed}>
             {this.state.currentFavServerList.map((index, id) => (
-            <li key={`${index.name}${index}`} id={id} onClick={this.getQueriedServer.bind(this)} className={`fav-server ${id === this.state.activeLink ? "is--active" : ""}`}>
+            <li
+                key={`${index.name}${index}`}
+                id={id}
+                tabIndex={id}
+                onClick={this.getQueriedServer.bind(this)}                
+                className={`fav-server ${id === this.state.activeLink ? "is--active" : ""}`}
+              >
               <div className="fav-server__name">{index[0]}</div>
               <div className="fav-server__address">
                 <div className="fav-server__ip" id={`fav-server__ip--` + id}>{index[1]}</div>:

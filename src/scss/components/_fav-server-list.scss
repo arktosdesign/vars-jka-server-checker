@@ -12,6 +12,8 @@ ul#fav-list {
   padding-bottom: $spacer * 1.25;
   height: 100%;
   overflow-y: auto;
+  scroll-behavior: smooth;
+  -webki-scroll-behavior: smooth;
   @include scrollbar();
   
   & > li.fav-server {
@@ -30,7 +32,7 @@ ul#fav-list {
       background: t($card-bg);
       border-color: t($card-bg);
     }
-    transition: border-color $timing-xs $ease-in, background $timing-xs $ease-in;
+    transition: border-color $timing-xs $ease-in, background $timing-xs $ease-in, transform $timing-md $ease-out;
     &:hover {
       @include themed() {
         background: t($card-bg-hover);
@@ -112,6 +114,7 @@ ul#fav-list {
       pointer-events: none;
       transition: opacity $timing-sm $ease-out;
     }
+    // &:focus,
     &.is--active {
       cursor: pointer;
       @include themed() {
