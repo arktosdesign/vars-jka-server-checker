@@ -1,7 +1,7 @@
 <img src="https://github.com/arktosdesign/vars-jka-server-checker/blob/master/public/logo192.png?raw=true" width="128px" height="128px" alt="var's JKA Server Checker">
 
 ## var's JKA Server Checker
-### A JKA server checker built in React JS and Electron 👽
+### A JKA Server Checker built in React JS and Electron 👽
 
 ## 📥 Download
 [Download 0.1.5 release for Windows](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/release/Vars%20JKA%20Server%20Checker%20Setup%200.1.5.exe)
