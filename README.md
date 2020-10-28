@@ -1,4 +1,4 @@
-![image](https://github.com/arktosdesign/public/logo192.png)
+![image](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/public/logo192.png?raw=true)
 
 ## var's JKA Server Checker
 ### A JKA server checker built in React JS and Electron 👽
