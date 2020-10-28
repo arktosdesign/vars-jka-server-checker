@@ -1,0 +1,78 @@
+.server-form {
+  position: relative;
+  height: 100%;  
+  width: $server-form-width;
+  min-width: $server-form-width;
+  max-width: $server-form-width;
+  margin: 0;
+  padding: 0;
+  @include themed() {
+    background: t($card-bg);
+    color: t($text);
+    border-width: 0 $border-width / 2 0 0;
+    border-style: solid;
+    border-color: t($border);    
+  }
+  transition: color $timing-xs $ease-in, background $timing-xs $ease-in, border-color $timing-xs $ease-in;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 999999;
+    pointer-events: none;
+    @include themed() {
+      background: t($card-bg);
+    }
+    transition: background $timing-xs $ease-in, border-color $timing-xs $ease-in;
+  }
+  &:before {
+    width: calc(100% + #{$spacer + 3px});
+    height: 3px;
+    top: auto;
+    bottom: -3px;
+    right: -$border-width / 2;
+    @include themed() {
+      border-width: 0 $border-width / 2 0 0;
+      border-style: solid;
+      border-color: t($border);    
+    }
+  }
+  &:after {
+    top: auto;
+    bottom: 0;
+    left: -3px;
+    width: 3px;
+    height: 100%;
+  }  
+}
+
+.toggle-wrapper {
+  position: relative;
+  z-index: 99999;
+  height: 0;
+  overflow: visible;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: 50% 0%;
+  transform: scaleY(0.96) translateY(0px);
+  transition: transform $timing-sm $ease-out, opacity $timing-md $ease-out;
+  // overflow: hidden;
+  // height: 0;
+  // max-height: 96px;
+  // transition: height $timing-md $ease-out;
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &.is--open {    
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1) translateY(8px);
+    // height: 96px;
+    // max-height: 96px;
+    // transition: height $timing-md / 1.15 $ease-in;
+  }
+}

@@ -1,0 +1,89 @@
+form#queryserver {
+  position: relative;
+  width: 100%;
+  max-width: calc(100% - 14px);
+  margin-left: 6px;
+  box-shadow: $box-shadow;
+  padding: $spacer * 1.25 $spacer / 1.15;
+  border-radius: $border-radius;
+  @include themed() {
+    background: t($bg);
+  }
+  transition: background $timing-xs $ease-in, border-color $timing-xs $ease-in;
+  & > span {
+    font-weight: bold;
+    display: block;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    @include themed() {
+      color: t($text);
+    }
+    transition: color $timing-xs $ease-in;
+  }
+  input, button {
+    font-family: $ui-font;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  input {
+    padding: $input-padding-y $input-padding-x;
+    border-radius: $border-radius / 1.5;
+    border-width: $border-width / 2;
+    border-style: solid;
+    letter-spacing: 0.6px;
+    @include themed() {
+      background: t($card-bg);
+      color: t($text);
+      border-color: t($border-secondary);
+    }
+    transition: color $timing-xs $ease-in, background $timing-xs $ease-in, border-color $timing-xs $ease-in;
+  }
+  input::-webkit-input-placeholder {
+    @include themed() {
+      color: t($text);
+    }
+  }
+  input:-ms-input-placeholder {
+    @include themed() {
+      color: t($text);
+    }
+  }
+  input::placeholder {
+    @include themed() {
+      color: t($text);
+    }
+  }
+  .form-group {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $spacer / 1.5;    
+    & > input {
+      width: auto;
+      max-width: auto;
+    }
+    &:not(.form-group--ip-port) {
+      & > input, & > button {
+        width: 100%;
+      }
+    }
+    &.form-group--ip-port {
+      & > input:first-child {
+        width: calc(68% - #{$spacer / 1.5});
+      }
+      & > input:last-child {
+        width: 32%;
+      }
+    }
+  }
+  button {
+    @extend %big-btn;
+    width: 100%;
+    height: 42px;
+  }
+}

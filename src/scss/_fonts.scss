@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Circular Std';
+  src: url('../fonts/Circular/CircularStd-Black.eot');
+  src: url('../fonts/Circular/CircularStd-Black.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Circular/CircularStd-Black.woff2') format('woff2'),
+      url('../fonts/Circular/CircularStd-Black.woff') format('woff'),
+      url('../fonts/Circular/CircularStd-Black.ttf') format('truetype'),
+      url('../fonts/Circular/CircularStd-Black.svg#CircularStd-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('../fonts/Circular/CircularStd-Medium.eot');
+  src: url('../fonts/Circular/CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Circular/CircularStd-Medium.woff2') format('woff2'),
+      url('../fonts/Circular/CircularStd-Medium.woff') format('woff'),
+      url('../fonts/Circular/CircularStd-Medium.ttf') format('truetype'),
+      url('../fonts/Circular/CircularStd-Medium.svg#CircularStd-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('../fonts/Circular/CircularStd-Bold.eot');
+  src: url('../fonts/Circular/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Circular/CircularStd-Bold.woff2') format('woff2'),
+      url('../fonts/Circular/CircularStd-Bold.woff') format('woff'),
+      url('../fonts/Circular/CircularStd-Bold.ttf') format('truetype'),
+      url('../fonts/Circular/CircularStd-Bold.svg#CircularStd-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std Book';
+  src: url('../fonts/Circular/CircularStd-Book.eot');
+  src: url('../fonts/Circular/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Circular/CircularStd-Book.woff2') format('woff2'),
+      url('../fonts/Circular/CircularStd-Book.woff') format('woff'),
+      url('../fonts/Circular/CircularStd-Book.ttf') format('truetype'),
+      url('../fonts/Circular/CircularStd-Book.svg#CircularStd-Book') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Define the "system" font family */
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}

@@ -1,0 +1,82 @@
+section#server {
+  flex-basis: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  @include scrollbar();
+  overflow-y: auto;
+  padding: $spacer * 1.25;
+  padding-top: $spacer * 1.25 + 12px;
+  ul.server__info-key {
+    @include list-unstyled();
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    & > li {
+      margin: 8px 0;
+      opacity: 0;
+      padding-left: 12px;
+      animation-name: fade-in-up;
+      animation-duration: $timing-lg;
+      animation-timing-function: $ease-out;
+      animation-fill-mode: forwards;
+      &:first-child {margin-top: 0;}
+      &:last-child {margin-bottom: 0; margin-top: 4px;}
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 82}ms;
+        }
+      }
+    }
+  }
+  table {   
+    // width: calc(100% + 4px);
+    // margin-left: -2px;
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    padding: 0;
+    margin: $spacer * 1.5 auto $spacer * 2 auto;    
+    thead, tbody {
+      padding: 0;
+    }    
+    thead th {      
+      padding: 0px 12px;
+      padding-bottom: 12px;
+    }
+    tbody td {
+      padding: 8px 12px;
+    }
+    th {      
+      animation-name: fade-in;
+      animation-delay: 0s;
+      animation-duration: $timing-lg;      
+    }
+    td {
+      opacity: 0;
+      animation-name: fade-in-up;
+      animation-delay: 0.28s;
+      animation-duration: $timing-md;
+    }
+    th, td {      
+      animation-timing-function: $ease-out;
+      animation-fill-mode: forwards;
+      letter-spacing: 0.2px;
+    }
+    th.no-players {
+      font-size: 15px;
+      letter-spacing: 0.5px;      
+      @include themed() {
+        color: t($text-secondary);
+      }
+      transition: color $timing-xs $ease-in;
+    }
+    tr:nth-child(even) {
+      & > td {
+        @include themed() {
+          background: t($highlight);
+        }
+        transition: background $timing-xs $ease-in;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+directories:
+  output: release
+  buildResources: assets
+files:
+  - filter:
+      - build/**/*
+      - build/**/*
+      - node_modules/**/*
+extraMetadata:
+  main: build/electron.js
+appId: com.vars-jka-server-checker
+extends: react-cra
+electronVersion: 9.2.1

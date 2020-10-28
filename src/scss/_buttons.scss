@@ -1,0 +1,21 @@
+button {
+  cursor: pointer;
+}
+
+
+button.btn-toggle-server {  
+  @extend %big-btn;
+  width: calc(100% - 14px);
+  margin: 10px 0px 0px 6px;
+  height: $btn-toggle-server-height;
+}
+
+
+button.copy-to-clipboard {
+  @extend %outline-btn;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  height: 36px;
+  width: 164px;  
+}
+
