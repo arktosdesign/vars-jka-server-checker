@@ -1,12 +1,23 @@
+![image](https://github.com/arktosdesign/public/logo192.png)
+
 ## var's JKA Server Checker
-### A JKA server checker build in React JS + Electron
+### A JKA server checker built in React JS and Electron 👽
 
-## Available Scripts
+## 📥 Download
+[Download 0.1.5 release for Windows](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/release/Vars%20JKA%20Server%20Checker%20Setup%200.1.5.exe)
 
-In the project directory, you can run:
+## 📜 Project
 
-### `npm run dev`
+See [package.json](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/package.json) for dependencies and scripts
+
+### Available Scripts
+
+In the project directory, cd into the top level and run `npm i` as usual.
+
+#### `npm run dev`
 To start dev environment
 
-### `npm run build`
-To build application
+**Note:** This project is made for **Electron** and **won't** run as a React app in the browser out of the box due to the Electron's IPC renderer/remote processes.
+
+#### `npm run build`
+To build the Electron application. See [electron-builder](https://github.com/electron-userland/electron-builder) for more details.
