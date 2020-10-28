@@ -11,8 +11,6 @@ function createWindow() {
 
   // Load the previous state with fallback to defaults
   let mainWindowState = windowStateKeeper({
-    // defaultWidth: 460,
-    // defaultHeight: 680,
     defaultWidth: 890,
     defaultHeight: 590,
   });
@@ -23,8 +21,6 @@ function createWindow() {
     'y': mainWindowState.y,
     width: mainWindowState.width,
     height: mainWindowState.height,
-    // minHeight: 420,
-    // minWidth: 459,
     minHeight: 460,
     minWidth: 636,
     frame: false,
