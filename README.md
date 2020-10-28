@@ -30,7 +30,7 @@ See [/src/components/](https://github.com/arktosdesign/vars-jka-server-checker/t
 Components are then rendered in [App.js](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/src/App.js)
 
 ## 🔌 Electron
-Wraps the React app into an Electron application. See [/public/electron.js](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/public/electron.js) for Electron configuration.
+Wraps the React app in an Electron application. See [/public/electron.js](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/public/electron.js) for Electron configuration.
 
 ## 🖌️ Styling
 See [/src/scss/](https://github.com/arktosdesign/vars-jka-server-checker/tree/master/src/scss) for styling structure.
