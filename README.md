@@ -27,7 +27,7 @@ To build the Electron application. See [electron-builder](https://github.com/ele
 ## ⚛️ React
 See [/src/components/](https://github.com/arktosdesign/vars-jka-server-checker/tree/master/src/components) for component structure.
 
-Components are then rendered in [App.js](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/src/App.js)
+Components are rendered in [App.js](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/src/App.js)
 
 ## 🔌 Electron
 Wraps the React app in an Electron application. See [/public/electron.js](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/public/electron.js) for Electron configuration.
