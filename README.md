@@ -14,7 +14,7 @@ The application queries [JKA](https://store.steampowered.com/app/6020/STAR_WARS_
 
 ### Available scripts
 
-In the project directory, cd into the top level and run `npm i` as usual to install dependencies.
+In the project directory, run `npm i` as usual to install dependencies.
 
 #### `npm run dev`
 To start dev environment and compile code (including SCSS).
