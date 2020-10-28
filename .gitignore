@@ -25,3 +25,10 @@ yarn-error.log*
 /dist/win-unpacked
 /release/win-unpacked
 debug.log
+/release/Vars JKA Server Checker Setup 0.1.3.exe
+/release/Vars JKA Server Checker Setup 0.1.3.exe.blockmap
+/release/Vars JKA Server Checker Setup 0.1.4.exe
+/release/Vars JKA Server Checker Setup 0.1.4.exe.blockmap
+/release/builder-effective-config.yaml
+/release/latest.yml
+/release/*.exe.blockmap
