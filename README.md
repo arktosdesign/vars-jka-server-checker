@@ -10,7 +10,7 @@
 
 See [package.json](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/package.json) for details.
 
-The application queries [JKA](https://store.steampowered.com/app/6020/STAR_WARS_Jedi_Knight__Jedi_Academy/) servers by fetching data from [my custom API on Heroku](https://tranquil-sands-27723.herokuapp.com/?ip=142.44.198.205&port=29070) built with [Express JS](https://expressjs.com/). The API queries the inputted server IP and port using the [gamedig](https://github.com/gamedig/node-gamedig) library, and returns the JKA server data via an object which is then rendered by React. User's favourite servers are saved as an array in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+The application queries [JKA](https://store.steampowered.com/app/6020/STAR_WARS_Jedi_Knight__Jedi_Academy/) servers by fetching data from [my custom API on Heroku](https://tranquil-sands-27723.herokuapp.com/?ip=142.44.198.205&port=29070) built with [Express JS](https://expressjs.com/). The API queries the inputted server IP/port using the [gamedig](https://github.com/gamedig/node-gamedig) library and returns the JKA server data via an object, which is then rendered by React. The user's favourite servers are saved as an array in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
 ### Available scripts
 
