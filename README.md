@@ -24,7 +24,7 @@ To start dev environment and compile code (including SCSS).
 #### `npm run build`
 To build the Electron application. See [electron-builder](https://github.com/electron-userland/electron-builder) for more details.
 
-## ⚛️ React + components
+## ⚛️ React
 See [/src/components/](https://github.com/arktosdesign/vars-jka-server-checker/tree/master/src/components) for component structure.
 
 Components are then rendered in [App.js](https://github.com/arktosdesign/vars-jka-server-checker/blob/master/src/App.js)
