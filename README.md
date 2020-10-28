@@ -19,7 +19,7 @@ In the project directory, run `npm i` as usual to install dependencies.
 #### `npm run dev`
 To start dev environment and compile code (including SCSS).
 
-**Note:** This project is made for **Electron** and **won't** run as a React app in the browser out of the box due to the Electron's IPC renderer/remote processes.
+**Note:** This project is made for **Electron** and **won't** run as a React app in the browser out of the box due to the Electron's IPC renderer/remote processes needed for native window controls.
 
 #### `npm run build`
 To build the Electron application. See [electron-builder](https://github.com/electron-userland/electron-builder) for more details.
